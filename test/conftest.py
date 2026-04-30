@@ -68,3 +68,16 @@ def client_fixture(session_fixture):                # Define a fixture function 
     app.dependency_overrides[get_db] = override_get_db # Override the get_db dependency in the FastAPI app with the override_get_db function for testing purposes
     yield TestClient(app)                           #change from return to yield since we want to run some code before and after the test (setup and teardown)
     #Base.metadata.drop_all(bind=engine)            #drop the tables in the testing database after running the tests to clean up the testing environment and ensure that it is reset for the next test run 
+
+
+@pytest.fixture()
+def test_user(client_fixture):
+    user_data = {"email": "hkello123@gamil.com",
+                 "password": "password123"}
+    res = client_fixture.post("/users/", json=user_data)
+
+    assert res.status_code == 201
+    print(res.json())
+    new_user = res.json()
+    new_user["password"] = user_data["password"]
+    return new_user

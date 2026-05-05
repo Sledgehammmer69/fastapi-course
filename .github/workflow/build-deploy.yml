@@ -7,7 +7,7 @@ jobs:                         #this is where you define the jobs that will run i
     runs-on: ubuntu-latest    #this specifies the operating system that the job will run on
     steps:
       - name: pulling git repo  #this is the name of the step, you can name it anything you want
-        uses: actions/checkout@v2 #this is the action that will pull the code from the git repository, you can specify the version of the action you want to use
+        uses: actions/checkout@v4 #this is the action that will pull the code from the git repository, you can specify the version of the action you want to use
        # - name: set up python  #this is another step, you can add as many steps as you want
        #   uses: actions/setup-python@v2  #this is the action that will set up python on the runner, you can specify the version of python you
       - name: say hi to me

@@ -4,32 +4,24 @@ on: [push, pull_request]      #this will trigger the workflow on push and pull r
 
 jobs:                         #this is where you define the jobs that will run in the workflow
   job1:
-    #environment:
-    #  name: testing
+    environment:
+      name: testing
     env:
-      DATABASE_HOSTNAME: localhost
-      DATABASE_PORT: 5432
-      DATABASE_PASSWORD: Slenderman69
-      DATABASE_NAME: fastapi
-      DATABASE_USERNAME: postgres
-      SECRET_KEY: hweoufhOUWFLWOF93847R2ihuftuco977564
-      ALGORITHM: HS256
-      ACCESS_TOKEN_EXPIRE_MINUTES: 60
-      #DATABASE_HOSTNAME: ${{secrets.DATABASE_HOSTNAME}}
-      #DATABASE_PORT: ${{secrets.DATABASE_PORT}}
-      #DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
-      #DATABASE_NAME: ${{secrets.DATABASE_NAME}}
-      #DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
-      #SECRET_KEY: ${{secrets.SECRET_KEY}}
-      #ALGORITHM: ${{secrets.ALGORITHM}}
-      #ACCESS_TOKEN_EXPIRE_MINUTES: ${{secrets.ACCESS_TOKEN_EXPIRE_MINUTES}}
+      DATABASE_HOSTNAME: ${{secrets.DATABASE_HOSTNAME}}
+      DATABASE_PORT: ${{secrets.DATABASE_PORT}}
+      DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
+      DATABASE_NAME: ${{secrets.DATABASE_NAME}}
+      DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
+      SECRET_KEY: ${{secrets.SECRET_KEY}}
+      ALGORITHM: ${{secrets.ALGORITHM}}
+      ACCESS_TOKEN_EXPIRE_MINUTES: ${{secrets.ACCESS_TOKEN_EXPIRE_MINUTES}}
 
     services:
       postgres:
         image: postgres:16
         env:
-          POSTGRES_PASSWORD: Slenderman69
-          POSTGRES_DB: fastapi
+          POSTGRES_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
+          POSTGRES_DB: ${{secrets.DATABASE_NAME}}
           #POSTGRES_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
           #POSTGRES_DB: ${{secrets.DATABASE_NAME}}
         ports:

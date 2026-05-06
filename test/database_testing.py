@@ -6,7 +6,7 @@ from app.database import get_db
 from app.database import Base
 
 from fastapi.testclient import TestClient # Import TestClient from fastapi.testclient
-from app.main import app
+#from app.main import app
 import pytest
 from app import schemas
 

@@ -29,7 +29,7 @@ jobs:                         #this is where you define the jobs that will run i
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-          
+
     runs-on: ubuntu-latest    #this specifies the operating system that the job will run on
     steps:
       - name: pulling git repo  #this is the name of the step, you can name it anything you want
@@ -45,4 +45,4 @@ jobs:                         #this is where you define the jobs that will run i
       - name: Run tests with pytest #this will install pytest and run the tests, you can change it to any command you want to run
         run: |
           pip install pytest
-          pytest -v -s tests/  
+          pytest -v -s test/  

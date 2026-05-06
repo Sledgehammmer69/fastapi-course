@@ -4,8 +4,8 @@ on: [push, pull_request]      #this will trigger the workflow on push and pull r
 
 jobs:                         #this is where you define the jobs that will run in the workflow
   job1:
-    environment:
-      name: testing
+    #environment:
+    #  name: testing
     env:
       DATABASE_HOSTNAME: localhost
       DATABASE_PORT: 5432

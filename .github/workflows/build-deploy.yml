@@ -26,7 +26,7 @@ jobs:                         #this is where you define the jobs that will run i
 
     services:
       postgres:
-        image: postgres
+        image: postgres:16
         env:
           POSTGRES_PASSWORD: Slenderman69
           POSTGRES_DB: fastapi_test

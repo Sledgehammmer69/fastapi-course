@@ -16,3 +16,7 @@ jobs:                         #this is where you define the jobs that will run i
         run: python -m pip install --upgrade pip
       - name: Install dependencies
         run: pip install -r requirements.txt  #this will install the dependencies specified in the requirements.txt file, you can change it to any command you want to run
+      - name: Run tests with pytest #this will install pytest and run the tests, you can change it to any command you want to run
+        run: |
+          pip install pytest
+          pytest 

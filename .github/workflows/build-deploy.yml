@@ -5,7 +5,7 @@ on: [push, pull_request]      #this will trigger the workflow on push and pull r
 jobs:                         #this is where you define the jobs that will run in the workflow
   job1:
     env:
-      DATABASE_URL: localhost
+      DATABASE_HOSTNAME: localhost
       DATABASE_PORT: 5432
       DATABASE_PASSWORD: Slenderman69
       DATABASE_NAME: fastapi

@@ -10,7 +10,7 @@ jobs:                         #this is where you define the jobs that will run i
       DATABASE_HOSTNAME: localhost
       DATABASE_PORT: 5432
       DATABASE_PASSWORD: Slenderman69
-      DATABASE_NAME: fastapi
+      DATABASE_NAME: fastapi_test
       DATABASE_USERNAME: postgres
       SECRET_KEY: hweoufhOUWFLWOF93847R2ihuftuco977564
       ALGORITHM: HS256

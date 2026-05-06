@@ -14,7 +14,7 @@ jobs:                         #this is where you define the jobs that will run i
       DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
       SECRET_KEY: ${{secrets.SECRET_KEY}}
       ALGORITHM: ${{secrets.ALGORITHM}}
-      ACCESS_TOKEN_EXPIRE_MINUTES: 60
+      ACCESS_TOKEN_EXPIRE_MINUTES: ${{secrets.ACCESS_TOKEN_EXPIRE_MINUTES}}
     runs-on: ubuntu-latest    #this specifies the operating system that the job will run on
     steps:
       - name: pulling git repo  #this is the name of the step, you can name it anything you want

@@ -93,4 +93,4 @@ jobs:                         #this is where you define the jobs that will run i
           script: |
             cd app/src
             git pull
-            sudo systemctl restart fastapi.service
+            echo ${{secrets.PROD_PASSWORD}} |sudo -S systemctl restart fastapi.service

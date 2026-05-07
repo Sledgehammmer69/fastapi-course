@@ -64,8 +64,8 @@ jobs:                         #this is where you define the jobs that will run i
           context: ./
           file: ./Dockerfile
           push: true
-          tags: user/fastapi:latest
-          cache-from: type=registry,ref=user/fastapi:buildcache
-          cache-to: type=registry,ref=user/fastapi:buildcache,mode=max
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/fastapi:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/fastapi:buildcache,mode=max
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }} 

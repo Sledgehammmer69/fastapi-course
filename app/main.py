@@ -32,7 +32,7 @@ def startup():
 
 @app.get("/")
 async def root():
-    return {"Message": "Hello World. Welcome to my FastApi creation. Testingbeing done on docker as well....if this can be seen then it is working. Thanks for watching."}
+    return {"Message": "Hello World. Pushing to production"}
 
 
 

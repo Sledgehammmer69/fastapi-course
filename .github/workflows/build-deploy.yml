@@ -78,3 +78,18 @@ jobs:                         #this is where you define the jobs that will run i
     steps:
       - name: deploying stuffs
         run: echo "going to deploy some stuffshere..."
+      # login to our ubuntu server
+      # cd /app/src
+      # git pull
+      # systemctl restart api.service
+
+      - name: Deploy to My Ubuntu Server
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{secrets.PROD_HOST}}
+          username: ${{secrets.PROD_USERNAME}}
+          password: ${{secrets.PROD_PASSWORD}}
+          script: |
+            cd app/src
+            git pull
+            sudo systemctl restart fastapi.service

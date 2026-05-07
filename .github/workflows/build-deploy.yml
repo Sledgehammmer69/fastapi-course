@@ -72,7 +72,7 @@ jobs:                         #this is where you define the jobs that will run i
 #        run: echo ${{ steps.docker_build.outputs.digest }} 
 
   deploy:
-    enviroment: production
+    environment: production
     runs-on: ubuntu-latest
     needs: build              #this means that the deploy job will only run if the build job is successful
 

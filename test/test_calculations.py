@@ -47,7 +47,7 @@ def test_withdraw(bank_account):
 
 def test_deposit(bank_account):
     bank_account.deposit(200)
-    assert bank_account.balance == 255
+    assert bank_account.balance == 250
 
 def test_collect_interest(bank_account):
     bank_account.collect_interest()

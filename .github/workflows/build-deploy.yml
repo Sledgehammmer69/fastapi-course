@@ -78,7 +78,7 @@ jobs:                         #this is where you define the jobs that will run i
 
     steps:
       - name: deploying stuffs
-        run: echo "going to deploy some stuffs here..."
+        run: echo "going to deploy some stuffs here testing..."
       # login to our ubuntu server
       # cd /app/src
       # git pull

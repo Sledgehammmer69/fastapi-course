@@ -45,4 +45,4 @@ jobs:                         #this is where you define the jobs that will run i
       - name: Run tests with pytest #this will install pytest and run the tests, you can change it to any command you want to run
         run: |
           pip install pytest
-          pytest -v -s test/  
+          pytest   

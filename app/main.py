@@ -25,9 +25,9 @@ app.include_router(user.router)
 app.include_router(auth.router)
 app.include_router(vote.router)
 
-@app.on_event("startup")
+@app.on_event("startup")    #This is a decorator that registers the function to be called when the application starts up. In this case, it will create the database tables defined in the models.
 def startup():
-    models.Base.metadata.create_all(bind=engine)
+    models.Base.metadata.create_all(bind=engine)    #This line creates all the tables in the database that are defined in the models. It uses the metadata from the models to create the tables in the database specified by the engine. This ensures that the database is set up and ready to use when the application starts.
 
 
 @app.get("/")

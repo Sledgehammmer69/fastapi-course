@@ -45,4 +45,27 @@ jobs:                         #this is where you define the jobs that will run i
       - name: Run tests with pytest #this will install pytest and run the tests, you can change it to any command you want to run
         run: |
           pip install pytest
-          pytest   
+          pytest 
+
+## this part is optional and it will build and push the docker image to dockerhub, you can skip this part if you don't want to do it
+      - name: Login to Docker Hub
+        uses: docker/login-action@v4
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v7
+        with:
+          context: ./
+          file: ./Dockerfile
+          push: true
+          tags: user/fastapi:latest
+          cache-from: type=registry,ref=user/fastapi:buildcache
+          cache-to: type=registry,ref=user/fastapi:buildcache,mode=max
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }} 

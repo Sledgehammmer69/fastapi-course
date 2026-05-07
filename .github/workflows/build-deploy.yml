@@ -85,7 +85,7 @@ jobs:                         #this is where you define the jobs that will run i
       # systemctl restart api.service
 
       - name: Deploy to My Ubuntu Server
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@master
         with:
           host: ${{secrets.PROD_HOST}}
           username: ${{secrets.PROD_USERNAME}}

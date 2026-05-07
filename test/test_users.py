@@ -14,7 +14,7 @@ def test_root(client_fixture):                      # Define a test function to 
     print(res)                                      # Print the response object to the console for debugging purposes
     print(res.json())                               # Print the JSON content of the response to the console for debugging purposes
     print(res.json().get("Message"))                # Print the value associated with the "Message" key in the JSON response to the console for debugging purposes
-    assert res.json().get("Message") == "Message": "Hello World. Pushing to production" # Assert that the value of the "Message" key in the JSON response matches the expected string
+    assert res.json().get("Message") == "Hello World. Pushing to production" # Assert that the value of the "Message" key in the JSON response matches the expected string
     #assert res.status_code == 201                  # Assert that the status code of the response is 201 (Created)
 
 

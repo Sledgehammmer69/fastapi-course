@@ -32,7 +32,7 @@ def startup():
 
 @app.get("/")
 async def root():
-    return {"Message": "Hello World. Pushing to production"}
+    return {"Message": "Hello World. This is my FastAPI application. The application is running successfully. This is the root endpoint. You can access this endpoint by going to http://localhost:8000/ in your browser or by using a tool like curl or Postman to send a GET request to the root endpoint. This also runs on my own public IP address. Thank You for visiting an have a nice day!"}
 
 
 

@@ -14,7 +14,7 @@ def test_root(client_fixture):                      # Define a test function to 
     print(res)                                      # Print the response object to the console for debugging purposes
     print(res.json())                               # Print the JSON content of the response to the console for debugging purposes
     print(res.json().get("Message"))                # Print the value associated with the "Message" key in the JSON response to the console for debugging purposes
-    assert res.json().get("Message") == "Hello World. Pushing to production" # Assert that the value of the "Message" key in the JSON response matches the expected string
+    assert res.json().get("Message") == "Hello World. This is my FastAPI application. The application is running successfully. This is the root endpoint. You can access this endpoint by going to http://localhost:8000/ in your browser or by using a tool like curl or Postman to send a GET request to the root endpoint. This also runs on my own public IP address. Thank You for visiting an have a nice day!" # Assert that the value of the "Message" key in the JSON response matches the expected string
     #assert res.status_code == 201                  # Assert that the status code of the response is 201 (Created)
 
 
